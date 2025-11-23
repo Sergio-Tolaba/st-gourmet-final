@@ -253,3 +253,154 @@
     padding: 8px 10px;
   }
 }
+/* ======= Restauración móvil específica para Carrito =======
+   Pegar este bloque completo en Carrito.css (al final).
+   Usa alta especificidad y algunos !important para recuperar el look.
+   ========================================================== */
+
+.carrito-container {
+  box-sizing: border-box;
+  padding: 14px 12px 90px 12px !important; /* espacio inferior para fixed bars */
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  background: transparent !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Items del carrito: columnas verticales en móvil */
+.carrito-container .cart-list,
+.carrito-container .carrito-list,
+.carrito-container ul.cart-items {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+/* Cada item: imagen a la izquierda, contenido flexible a la derecha -- pero en móvil stacked */
+.carrito-container .cart-item,
+.carrito-container .car-item,
+.carrito-container .cart-row {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding: 8px 6px !important;
+  background: transparent !important;
+}
+
+/* En pantallas pequeñas apilamos verticalmente (imagen arriba, texto abajo) */
+@media (max-width: 640px) {
+  .carrito-container .cart-item,
+  .carrito-container .car-item,
+  .carrito-container .cart-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .carrito-container .cart-item img,
+  .carrito-container .cart-thumb,
+  .carrito-container .cart-image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* Texto y titulos */
+.carrito-container .product-name,
+.carrito-container .cart-title,
+.carrito-container .item-name {
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+  color: #2d2d2d !important;
+  margin: 0 0 6px 0 !important;
+}
+
+/* Precio y subtotal */
+.carrito-container .price,
+.carrito-container .item-price,
+.carrito-container .subtotal {
+  font-weight: 700 !important;
+  color: #d35400 !important;
+  font-size: 1rem !important;
+}
+
+/* Botones: ocupar ancho completo en móvil y espaciado correcto */
+.carrito-container .cart-actions,
+.carrito-container .cart-buttons,
+.carrito-container .actions {
+  display: flex !important;
+  gap: 8px !important;
+  width: 100% !important;
+  flex-wrap: wrap !important;
+}
+
+.carrito-container .btn,
+.carrito-container button,
+.carrito-container .btn-primary,
+.carrito-container .checkout-btn {
+  width: 100% !important;
+  padding: 12px 10px !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  box-sizing: border-box !important;
+}
+
+/* Botón secundario */
+.carrito-container .btn-secondary,
+.carrito-container .cancel-btn {
+  width: 48% !important;
+}
+
+/* Total final fijo al fondo (si preferís que sea fijo en móvil) */
+.carrito-container .cart-footer,
+.carrito-container .cart-summary {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: #fff !important;
+  border-top: 1px solid #efe6dd !important;
+  padding: 12px 14px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  align-items: center !important;
+  z-index: 10002 !important; /* por encima de mini carts */
+}
+
+/* Evitar que fixed elements de otras pantallas tapen el carrito */
+.carrito-container,
+.carrito-container * {
+  z-index: auto !important;
+}
+
+/* Si había toasts o notificaciones de ofertas que aparezcan sobre el carrito, los bajamos */
+.ofertas-container .toast,
+.ofertas-container .offers-mini-cart,
+.toast {
+  z-index: 999 !important;
+}
+
+/* Forzar scroll vertical del body para móviles si algo lo bloquea */
+@media (max-width: 640px) {
+  html, body {
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow-y: auto !important;
+  }
+}
+
+/* Pequeñas utilidades para recuperar estilos */
+.carrito-container .qty-controls button,
+.carrito-container .qty-controls .btn {
+  width: 34px !important;
+  height: 34px !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+}

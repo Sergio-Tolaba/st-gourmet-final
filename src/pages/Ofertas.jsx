@@ -272,10 +272,7 @@ const Ofertas = () => {
                 <p>
                   Después del pago simulado verás una confirmación y tu carrito de ofertas se vaciará.
                 </p>
-                <img
-                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b3c5b0c0b8b7f6e6c3d4c2f7d9d6a1b"
-                  alt="Gourmet"
-                />
+
               </div>
             </div>
 
