@@ -138,3 +138,8 @@ p {
   text-align: left; /* <-- lo cambié para que no centre todo */
   padding: 0;
 }
+footer {
+  margin-top: auto;
+  padding: 10px 0;
+  text-align: center;
+}
