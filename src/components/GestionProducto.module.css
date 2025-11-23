@@ -1,0 +1,226 @@
+/* ============================
+   Variables
+============================ */
+:root {
+  --bg: #f5f7fb;
+  --panel-bg: #fff;
+  --muted: #6b7280;
+  --accent: #0b665f;
+  --danger: #e63946;
+  --card-shadow: 0 2px 8px rgba(16, 24, 40, 0.06);
+  --radius: 10px;
+}
+
+/* ============================
+   Layout general
+============================ */
+.wrapper {
+  padding: 20px;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 8px;
+}
+
+/* Paneles */
+.panel {
+  flex: 1 1 0;
+  background: var(--panel-bg);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* ============================
+   Botón agregar producto
+============================ */
+.botonAgregarProducto {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.agregarInfo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.agregarText {
+  display: flex;
+  flex-direction: column;
+}
+.agregarLine {
+  font-size: 0.85rem;
+  margin: 0;
+}
+.agregarLineBold {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 700;
+  margin-top: 40px;
+}
+
+/* ============================
+   Tarjetas de producto
+============================ */
+.productoItem {
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.12s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.productoItem:hover {
+  transform: translateY(-4px);
+}
+
+.imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nombre {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.precio {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ============================
+   Botones dentro de la tarjeta
+============================ */
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.6rem;
+}
+
+.btnEliminar {
+  padding: 0.42rem 0.7rem;
+  background: var(--danger);
+  color: white;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ============================
+   FORMULARIO
+============================ */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+/* ==== Móviles ==== */
+@media (max-width: 575.98px) {
+  .container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .productoItem {
+    margin: 0 0.6rem;
+    padding: 0.8rem;
+  }
+
+  .imagen {
+    height: 140px;
+  }
+
+  .controls {
+    justify-content: flex-start;
+  }
+
+  .btnEliminar {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.5rem;
+    margin-right: 1rem;
+  }
+}
+
+/* ==== Tablets ==== */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .imagen {
+    height: 160px;
+  }
+
+  .nombre {
+    font-size: 1.05rem;
+  }
+
+  .precio {
+    font-size: 1rem;
+  }
+}
+
+/* ==== Desktop ==== */
+@media (min-width: 992px) {
+  .imagen {
+    height: 200px;
+  }
+
+  .nombre {
+    font-size: 1.12rem;
+  }
+
+  .precio {
+    font-size: 1.05rem;
+  }
+}
+/* ============================================
+   CENTRAR TODA LA SPA
+============================================ */
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 0 auto; /* centra todo */
+  max-width: 1200px; /* ancho ideal web */
+}
+
+.panel {
+  margin: 0 auto; /* centra cada panel dentro de su columna */
+}

@@ -1,0 +1,113 @@
+/* ADMIN: layout general */
+.admin-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Columnas */
+.product-list {
+  flex: 1 1 60%;       /* ocupa más espacio */
+  order: 1;            /* por defecto primero */
+}
+
+.product-form {
+  flex: 0 0 35%;       /* ancho fijo razonable en desktop */
+  order: 2;            /* por defecto segundo (a la derecha) */
+}
+
+/* Forzar formularios y inputs full width */
+.product-form form,
+.product-form .form-container,
+.product-list .card {
+  width: 100%;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- EN MÓVIL: pasar todo a columna y asegurarnos que los formularios queden al final --- */
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column; /* todo uno debajo del otro */
+    gap: 12px;
+  }
+
+  /* Aseguramos que productos aparezcan antes del formulario */
+  .product-list { order: 1; }
+  .product-form { order: 2; }
+
+  /* Hacer que formulario no quede pegado ni oculto */
+  .product-form {
+    flex: 1 1 auto;
+    padding-bottom: 16px;
+  }
+
+  /* Opcional: añadir borde o card para separar visualmente */
+  .product-list .card, .product-form .card {
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+    background: #fff;
+  }
+}
+/* ADMIN LAYOUT: list + forms */
+.admin-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Lista de productos (ocupa el espacio principal) */
+.product-list {
+  flex: 1 1 60%;
+  order: 1;
+}
+
+/* Wrapper que contiene ambos formularios apilados */
+.forms-wrapper {
+  flex: 0 0 35%;
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Cada formulario dentro del wrapper */
+.forms-wrapper > .form-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+  /* sombra suave opcional */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* Inputs y botones full width para que no se rompa en móvil */
+.forms-wrapper input,
+.forms-wrapper select,
+.forms-wrapper textarea,
+.forms-wrapper button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- MÓVIL: todo en columna y formularios al final --- */
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .product-list { order: 1; }    /* productos primero */
+  .forms-wrapper { order: 2; }   /* forms después */
+  .forms-wrapper { width: 100%; flex: none; }
+  .forms-wrapper > .form-card { padding: 10px; }
+}

@@ -1,0 +1,262 @@
+/* Carrito.css - versión corregida */
+
+/* --- Reset local para evitar reglas globales que sobreescriben color/width --- */
+.carrito-container,
+.carrito-container * {
+  box-sizing: border-box;
+  color: #111 !important; /* fuerza color legible (corrección) */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor general */
+.carrito-container {
+  background: #f4f6f8; /* fondo suave */
+  padding: 16px;
+  border-radius: 10px;
+  max-width: 1100px;
+  margin: 12px auto;
+  color: #111;
+  margin-top: 60px;
+}
+
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  margin-left: 15px;
+}
+.carrito-header .titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.carrito-header .acciones {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Botones base */
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+}
+
+/* Botones específicos */
+.btn-primary {
+  background: linear-gradient(180deg, #1976d2, #155fa0);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.btn-danger {
+  background: #fff;
+  color: #c62828;
+  border: 1px solid rgba(198, 40, 40, 0.12);
+}
+
+/* clases usadas en JSX */
+.btn-vaciar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+}
+.btn-pagar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* Lista */
+.carrito-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Item */
+.carrito-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+/* Imagen */
+.carrito-item img {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex: 0 0 84px;
+}
+
+/* Info principal (nombre, descripcion, cantidad) */
+.info {
+  flex: 1 1 auto;
+  min-width: 0; /* permite truncado */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info .descripcion {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Controles de cantidad */
+.cantidad-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.cantidad-control button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fafafa;
+  cursor: pointer;
+}
+
+/* --- Contenedor derecho: precio / subtotal / acciones --- */
+.item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex: 0 0 180px;
+  min-width: 140px;
+  text-align: right;
+}
+
+/* Asegurar que los textos no ocupen 100% inesperadamente */
+.item-right .precio,
+.item-right .subtotal {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Subtotal en un tamaño menor */
+.item-right .subtotal {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Boton eliminar pequeño */
+.item-right .btn-eliminar {
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
+}
+
+/* Footer con total */
+.carrito-footer {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.carrito-total {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111;
+}
+
+/* Ajustes de h2/p del header para mejor lectura */
+.carrito-container h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.carrito-container p {
+  margin: 0;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* --- Responsive: en pantallas chicas apilar y poner todo full-width --- */
+@media (max-width: 720px) {
+  .carrito-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .carrito-item img {
+    width: 100%;
+    height: 160px;
+    flex: 0 0 auto;
+  }
+  .item-right {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+  .item-right .precio,
+  .item-right .subtotal {
+    white-space: normal;
+  }
+  .carrito-header {
+    align-items: flex-start;
+  }
+  .carrito-header .acciones {
+    margin-top: 8px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .btn-vaciar,
+  .btn-pagar {
+    width: auto;
+    padding: 8px 10px;
+  }
+}

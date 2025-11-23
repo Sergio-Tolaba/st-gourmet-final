@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.rutaAdmin {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-link-container {
+  margin-top: 8px;
+}
+
+.admin-link {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Centrado general del menú */
+.site-header .nav-container {
+  justify-content: center !important;
+}
+
+/* Versión móvil */
+@media (max-width: 600px) {
+  .logout-btn {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+
+  .nav-right,
+  .nav-left {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .brand {
+    text-align: center;
+  }
+}

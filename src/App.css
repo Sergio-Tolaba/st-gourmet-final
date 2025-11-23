@@ -1,0 +1,140 @@
+/* Reset útil */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial;
+  line-height: 1.4;
+}
+
+/* Contenedor global que envuelve Routes (poner .app-container en App.jsx) */
+.app-container {
+  width: 100%;
+  max-width: 1280px; /* ancho máximo en pantallas grandes */
+  margin: 0 auto; /* centra el layout en desktop */
+  padding: 16px; /* margen horizontal razonable en todas las pantallas */
+}
+
+/* Evitar overflow horizontal */
+html,
+body {
+  overscroll-behavior-x: none;
+  overflow-x: hidden;
+}
+
+/* Imágenes siempre respetan ancho del contenedor */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Cabecera (header) básica: evita que el header empuje el contenido */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+/* Si tenés un nav con links: que envuelva en móvil */
+.nav-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Zona principal de contenido (separar del root) */
+.main {
+  width: 100%;
+  margin-top: 70px;
+  text-align: left; /* <- importante: no centre todo el contenido */
+}
+
+/* Si tenés un hero en inicio */
+.hero {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+/* Cards o grid de productos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* Formularios: siempre full width en móvil */
+form,
+.form-container {
+  width: 100%;
+}
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ADMIN: contenedor de lista + formulario */
+.admin-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* En pantallas chicas pasa a columna */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 12px;
+  }
+  #root {
+    padding: 0;
+  } /* removemos el padding grande de root en móvil */
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .admin-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .header {
+    padding: 8px 0;
+  }
+  .main {
+    padding-bottom: 48px;
+  }
+}
+
+/* Evitar que títulos o textos se salgan */
+h1,
+h2,
+h3,
+p {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Si querés mantener #root con ancho centrado en desktop, pero sin afectar layout: */
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left; /* <-- lo cambié para que no centre todo */
+  padding: 0;
+}
