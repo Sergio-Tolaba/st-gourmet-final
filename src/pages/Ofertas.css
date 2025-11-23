@@ -1,8 +1,495 @@
-main {
-    padding: '2rem';
-    text-align: center;
+.ofertas-container {
+  padding: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-p {
-    margin-top: 1rem;
+/* header */
+.ofertas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.ofertas-titulo {
+  color: #5a3825;
+  margin: 0;
+  font-size: 1.5rem;
+}
+.ofertas-sub {
+  margin: 6px 0 0;
+  color: #7a604a;
+}
+
+/* grid */
+.ofertas-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+/* card */
+.oferta-card {
+  background: #fff9f3;
+  border: 1px solid #e8d4c4;
+  border-radius: 10px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.oferta-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.oferta-nombre {
+  margin: 0.6rem 0;
+  font-weight: 600;
+  color: #4d342d;
+  min-height: 48px;
+}
+
+/* precios */
+.oferta-precios {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+}
+.precio-original {
+  text-decoration: line-through;
+  color: #a18474;
+  font-size: 0.95rem;
+}
+.precio-oferta {
+  color: #d35400;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* acciones */
+.oferta-acciones {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+.btn-oferta {
+  background: #d35400;
+  color: white;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-detalle {
+  background: transparent;
+  border: 1px solid #d3b49b;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #5a3825;
+  font-weight: 600;
+}
+
+/* MINI CART (aside) */
+.offers-mini-cart {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 320px;
+  max-height: 76vh;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transform: translateY(40px) scale(0.98);
+  opacity: 0;
+  transition: all 240ms ease;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+}
+.offers-mini-cart.open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* header mini */
+.mini-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0e6df;
+  background: #fff8f3;
+}
+.mini-header strong {
+  font-size: 1rem;
+  color: #4d342d;
+}
+.mini-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.mini-empty {
+  background: transparent;
+  border: none;
+  color: #b94b22;
+  cursor: pointer;
+  font-weight: 600;
+}
+.mini-close {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* body mini */
+.mini-body {
+  padding: 10px;
+  overflow: auto;
+}
+.mini-empty-state {
+  text-align: center;
+  color: #7a604a;
+  padding: 18px 8px;
+}
+.mini-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mini-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.mini-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 60%;
+}
+.mini-name {
+  font-weight: 600;
+  color: #4d342d;
+  font-size: 0.95rem;
+}
+.mini-qty {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.mini-qty button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #e7d6c6;
+  background: transparent;
+  cursor: pointer;
+}
+.mini-sub {
+  font-weight: 700;
+  color: #2d2d2d;
+}
+.mini-remove {
+  background: transparent;
+  border: none;
+  color: #b94b22;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* summary & ctas */
+.mini-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px dashed #efe0d3;
+  margin-top: 8px;
+  font-weight: 700;
+  color: #4d342d;
+}
+.mini-cta {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding-bottom: 8px;
+  margin-top: 6px;
+}
+.btn-pay {
+  background: #256029;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #d3b49b;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* top toggle button */
+.offers-mini-toggle .mini-toggle-btn {
+  background: transparent;
+  border: 1px solid #f0e6df;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* PAYMENT MODAL */
+.pay-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+  padding: 20px;
+}
+.pay-card {
+  width: min(760px, 96%);
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+.pay-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0e6df;
+}
+.pay-card-body {
+  padding: 16px 20px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.pay-card-body img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+.pay-card-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 12px 20px;
+  border-top: 1px solid #f0e6df;
+}
+
+/* toast */
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 18px;
+  background: linear-gradient(180deg, #ffffff, #fff8f0);
+  border: 1px solid #e8d4c4;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 250ms ease;
+  z-index: 10001;
+}
+.toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive: en móviles el mini-cart ocupa toda la base como sheet */
+@media (max-width: 640px) {
+  .offers-mini-cart {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+  }
+  .oferta-img {
+    height: 120px;
+  }
+  .pay-card-body {
+    padding: 12px;
+  }
+}
+/* ======================================
+   Modal responsive (soporta .pay-modal / .pay-card
+   y también .modal-overlay / .modal-content)
+   ====================================== */
+
+/* Overlay / fondo oscuro */
+.pay-modal,
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem; /* evita que la caja toque los bordes en móviles */
+  z-index: 9999;
+}
+
+/* Caja interior del modal */
+.pay-card,
+.modal-content {
+  background: #ffffff;
+  width: 95vw; /* siempre cabe en pantalla */
+  max-width: 480px; /* ancho ideal en escritorio */
+  max-height: 90vh; /* no más alto que la ventana */
+  overflow-y: auto; /* scroll interno si hay mucho contenido */
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  transform-origin: center;
+  animation: modalIn 220ms cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+/* animación sutil */
+@keyframes modalIn {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Encabezado / texto dentro del modal */
+.pay-card header,
+.modal-content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.6rem;
+}
+
+.pay-card h2,
+.modal-content h2 {
+  font-size: 1.15rem;
+  margin: 0;
+  text-align: left;
+  color: #2d2d2d;
+}
+
+/* cuerpo y multimedia */
+.pay-card .pay-card-body,
+.modal-content .modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: #4d342d;
+  line-height: 1.4;
+}
+
+/* imágenes dentro del modal adaptables */
+.pay-card .pay-card-body img,
+.modal-content .modal-body img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Footer / botones */
+.pay-card-footer,
+.modal-content .modal-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 8px;
+  margin-top: 6px;
+  border-top: 1px solid #f3e9e0;
+}
+
+/* Botones */
+.btn-primary,
+.pay-card .btn-primary,
+.modal-content .btn-primary {
+  background: #256029;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.btn-secondary,
+.pay-card .btn-secondary,
+.modal-content .btn-secondary {
+  background: transparent;
+  border: 1px solid #d3b49b;
+  padding: 9px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* botón de cerrar (x) */
+.pay-close,
+.pay-card .pay-close,
+.modal-content .close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: #6b6b6b;
+}
+
+/* Mobile tweaks: menos padding, caja más alta relativa */
+@media (max-width: 480px) {
+  .pay-card,
+  .modal-content {
+    padding: 0.9rem;
+    max-width: 94vw;
+    max-height: 88vh;
+    border-radius: 12px;
+  }
+
+  .pay-card .pay-card-body img,
+  .modal-content .modal-body img {
+    max-height: 160px;
+  }
+
+  .btn-primary {
+    min-width: 100px;
+    padding: 10px;
+  }
+}
+
+/* Si otra regla lo sobreescribe, fuerza lo necesario */
+.pay-modal .pay-card,
+.modal-overlay .modal-content {
+  box-sizing: border-box;
 }

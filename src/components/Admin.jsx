@@ -11,7 +11,6 @@ function Admin() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // suponiendo que ProductList y ProductForm son componentes
   return (
   <div className="admin-container">
     {isMobile ? (

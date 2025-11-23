@@ -38,7 +38,8 @@ const Carrito = () => {
 
         <div className="acciones">
           <button className="btn btn-vaciar" onClick={vaciarCarrito}>Vaciar carrito</button>
-          <button className="btn btn-primary btn-pagar" onClick={() => { /* navegar a pago */ }}>Ir a pagar</button>
+          <button className="btn btn-primary btn-pagar" onClick={() => { alert("♦ Pago Exitoso ♦. Gracias por disfrutar de nuestra calidad St Gourmet, lo esperamos en su próxima compra.");
+  }}>Ir a pagar</button>
         </div>
       </div>
 
