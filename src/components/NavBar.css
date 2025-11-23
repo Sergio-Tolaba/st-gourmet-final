@@ -161,4 +161,33 @@ body {
     gap: 10px;
     width: 100%;
   }
+  @media (max-width: 720px) {
+
+  .nav-container {
+    padding: 0.5rem 1rem;         /* agrega margenes internos a izquierda/derecha */
+    box-sizing: border-box;       /* evita recortes */
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;      /* centra todo horizontalmente */
+  }
+
+  .nav-center {
+    width: calc(100% - 2rem);     /* reduce ancho y añade márgenes laterales */
+    margin: 0 auto;               /* centra el menú */
+    border-radius: 8px;           /* opcional pero hace que luzca más limpio */
+  }
+
+  .nav-link {
+    padding: 0.6rem 0;
+    width: 100%;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;      /* centra el usuario y botón */
+    padding-left: 10px;
+    padding-right: 10px;          /* evita que se pegue al borde */
+  }
+}
+
 }
