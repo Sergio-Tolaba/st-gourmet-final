@@ -183,9 +183,9 @@ body {
 
     .nav-right {
       justify-content: flex-start; /* deja el contenido alineado a la izquierda */
-      padding-left: 2xp; /* desplazamiento visible */
-      padding-right: 20px; /* un poco de aire del borde derecho */
-      gap: 5px;
+      padding-left: 1xp; /* desplazamiento visible */
+      padding-right: 25px; /* un poco de aire del borde derecho */
+      gap: 3px;
       width: 100%; /* evita que se pegue al borde */
     }
   }
