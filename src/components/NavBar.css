@@ -182,11 +182,16 @@ body {
     width: 100%;
   }
 
+  
   .nav-right {
-    width: 100%;
-    justify-content: center;      /* centra el usuario y botón */
-    padding-left: 10px;
-    padding-right: 10px;          /* evita que se pegue al borde */
+  justify-content: flex-start;   /* deja el contenido alineado a la izquierda */
+  padding-left: 20px;            /* desplazamiento visible */
+  padding-right: 10px;           /* un poco de aire del borde derecho */
+  gap: 10px;
+  width: 100%;          /* evita que se pegue al borde */
+  }
+  .btn-salir {
+    margin-right: 15px;   /* aleja el botón del borde derecho */
   }
 }
 
