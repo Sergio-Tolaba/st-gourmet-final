@@ -12,15 +12,12 @@ const NavBar = ({ cartCount = 0 }) => {
   return (
     <header className="site-header">
       <div className="nav-container">
-
-        {/* MARCA */}
         <div className="nav-left">
           <Link to="/" className="brand">
             St Gourmet
           </Link>
         </div>
 
-        {/* Botón hamburguesa */}
         <button
           className="hamburger"
           onClick={() => setMenuAbierto(!menuAbierto)}
@@ -29,39 +26,49 @@ const NavBar = ({ cartCount = 0 }) => {
           ☰
         </button>
 
-        {/* Menú central */}
-        <nav className={`nav-center ${menuAbierto ? 'open' : ''}`} role="navigation">
-          <NavLink to="/" className="nav-link" end onClick={() => setMenuAbierto(false)}>
+        <nav
+          className={`nav-center ${menuAbierto ? 'open' : ''}`}
+          role="navigation"
+        >
+          <NavLink
+            to="/"
+            className="nav-link"
+            end
+            onClick={() => setMenuAbierto(false)}
+          >
             Inicio
           </NavLink>
-          <NavLink to="/ofertas" className="nav-link" onClick={() => setMenuAbierto(false)}>
+          <NavLink
+            to="/ofertas"
+            className="nav-link"
+            onClick={() => setMenuAbierto(false)}
+          >
             Ofertas
           </NavLink>
-          <NavLink to="/carrito" className="nav-link" onClick={() => setMenuAbierto(false)}>
+          <NavLink
+            to="/carrito"
+            className="nav-link"
+            onClick={() => setMenuAbierto(false)}
+          >
             Carrito
           </NavLink>
           {esAdmin && (
-  <NavLink
-    to="/admin"
-    className="nav-link"
-    onClick={() => setMenuAbierto(false)}
-  >
-    Admin
-  </NavLink>
-)}
-
+            <NavLink
+              to="/admin"
+              className="nav-link"
+              onClick={() => setMenuAbierto(false)}
+            >
+              Admin
+            </NavLink>
+          )}
         </nav>
 
-        {/* DERECHA: Carrito + Usuario + Salir */}
         <div className="nav-right">
-
-          {/* Ícono del carrito con más margen */}
           <Link to="/carrito" className="cart-link" aria-label="Ver carrito">
             <span className="cart-icon">🛒</span>
             {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </Link>
 
-          {/* Usuario + Salir */}
           {usuario && (
             <>
               <span className="usuario-info">
@@ -74,13 +81,11 @@ const NavBar = ({ cartCount = 0 }) => {
             </>
           )}
 
-          {/* Ingresar si no hay usuario */}
           {!usuario && (
             <Link to="/login" className="login-btn">
               <button>Ingresar</button>
             </Link>
           )}
-
         </div>
       </div>
     </header>

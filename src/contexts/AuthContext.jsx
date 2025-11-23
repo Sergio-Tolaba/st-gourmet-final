@@ -1,4 +1,3 @@
-// src/contexts/AuthContext.jsx
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,7 +6,6 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
-  // Estado del usuario logueado
   const [usuario, setUsuario] = useState(() => {
     try {
       const raw = localStorage.getItem('app_user');
@@ -17,7 +15,6 @@ export const AuthProvider = ({ children }) => {
     }
   });
 
-  // --- CARGAR USUARIOS DESDE localStorage ---
   const loadUsers = () => {
     try {
       const raw = localStorage.getItem('app_users');
@@ -27,12 +24,10 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // --- GUARDAR USUARIOS ---
   const saveUsers = (users) => {
     localStorage.setItem('app_users', JSON.stringify(users));
   };
 
-  // --- CREAR USUARIOS POR DEFECTO SI NO EXISTEN ---
   useEffect(() => {
     const users = loadUsers();
 
@@ -47,13 +42,11 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // --- GUARDAR EL USUARIO LOGUEADO ---
   useEffect(() => {
     if (usuario) localStorage.setItem('app_user', JSON.stringify(usuario));
     else localStorage.removeItem('app_user');
   }, [usuario]);
 
-  // --- REGISTRO LOCAL ---
   const registerUser = ({ username, password, role = 'user' }) => {
     const users = loadUsers();
     if (users.find((u) => u.username === username)) {
@@ -65,7 +58,6 @@ export const AuthProvider = ({ children }) => {
     return { ok: true, user: newUser };
   };
 
-  // --- LOGIN CORRECTO ---
   const login = ({ username, password }) => {
     const users = loadUsers();
 
@@ -88,13 +80,11 @@ export const AuthProvider = ({ children }) => {
     return { ok: true, user: userData };
   };
 
-  // --- LOGOUT ---
   const logout = () => {
     setUsuario(null);
     navigate('/login', { replace: true });
   };
 
-  // --- VERIFICAR ADMIN ---
   const isAdmin = () => usuario?.role === 'admin';
 
   return (

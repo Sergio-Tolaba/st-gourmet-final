@@ -17,7 +17,6 @@ const EditarProducto = forwardRef(
       if (productoSeleccionado) {
         setProducto(productoSeleccionado);
 
-        // ⬅️ Cuando se selecciona un producto, hacer foco en el campo NOMBRE
         setTimeout(() => {
           nombreRef?.current?.focus();
         }, 50);

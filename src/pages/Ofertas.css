@@ -301,3 +301,130 @@
 
   .ofertas-container { padding-bottom: 6.6rem; } /* espacio para sheet */
 }
+/* ============================
+  FIX: mostrar mini-cart en tablet+desktop y evitar que tape el footer
+  Pegar al final de Ofertas.css (reemplaza reglas previas de .offers-mini-cart)
+  ============================ */
+
+/* variable para controlar altura visual aproximada del mini-cart (ajustá si cambias paddings) */
+:root { --offers-mini-height: 56px; }
+
+/* 1) Aseguramos espacio en el contenido para que el footer nunca quede tapado */
+.ofertas-container {
+  /* dejar espacio al final del contenido: altura del mini-cart + margen */
+  padding-bottom: calc(var(--offers-mini-height) + 2.4rem);
+  box-sizing: border-box;
+}
+
+/* 2) Mini-cart: visible por defecto (mobile -> sheet, tablet/desktop -> floating panel) */
+.ofertas-container .offers-mini-cart {
+  position: fixed;
+  right: 16px;
+  bottom: 12px;
+  width: 340px;                 /* ancho razonable en desktop/tablet */
+  max-width: calc(100% - 32px);
+  max-height: 60vh;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .22s ease, opacity .22s ease;
+  opacity: 1;
+  z-index: 10002;               /* suficientemente arriba, pero no demasiado */
+}
+
+/* mini-cart "oculto" aún responde a open/close si usás clase .open */
+.ofertas-container .offers-mini-cart:not(.open) {
+  transform: translateY(8px) scale(.995);
+  opacity: .98;
+}
+
+/* header del mini-cart */
+.ofertas-container .offers-mini-cart .mini-header {
+  padding: 10px 12px;
+  background: #fff8f3;
+  border-bottom: 1px solid #f0e6df;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* cuerpo del mini (scroll interno) */
+.ofertas-container .offers-mini-cart .mini-body {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: calc(60vh - 56px); /* resta header/footer pequeño */
+  box-sizing: border-box;
+}
+
+/* CTA/fila final del mini */
+.ofertas-container .offers-mini-cart .mini-cta {
+  padding: 10px;
+  border-top: 1px solid #f3e9e0;
+  display:flex;
+  gap:8px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 3) Comportamiento en móvil: ocupar casi todo el ancho como sheet */
+@media (max-width: 640px) {
+  :root { --offers-mini-height: 64px; } /* más alto en móvil si hay botones grandes */
+
+  .ofertas-container .offers-mini-cart {
+    left: 8px;
+    right: 8px;
+    width: calc(100% - 16px);
+    bottom: 10px;
+    max-height: 46vh;
+    border-radius: 12px;
+    padding: 0;
+    z-index: 10000;
+  }
+
+  .ofertas-container .ofertas-grid {
+    margin-bottom: calc(var(--offers-mini-height) + 3rem); /* más espacio en móvil */
+  }
+
+  .ofertas-container { padding-bottom: calc(var(--offers-mini-height) + 3.2rem); }
+}
+
+/* 4) Tablet/Desktop: aseguramos que el mini no tape el footer al hacer scroll */
+/*    - aumentamos max-height y hacemos que esté a la derecha (no en el medio inferior). */
+@media (min-width: 641px) {
+  .ofertas-container .offers-mini-cart {
+    width: 360px;
+    right: 24px;
+    bottom: 24px;
+    max-height: 60vh;
+    border-radius: 12px;
+  }
+
+  /* darle al contenido principal un margen-bottom menor (ya tenemos padding en .ofertas-container) */
+  .ofertas-container .ofertas-grid { margin-bottom: 1.6rem; }
+}
+
+/* 5) Si el footer está FIXED en tu layout, forzamos el mini-cart a aparecer POR DEBAJO del footer
+   (solo si tu footer tiene clase .app-footer; si no, ajustá el selector).
+   En general no hace falta; lo dejo comentado como opción alternativa:
+*/
+/*
+@media (min-width: 641px) {
+  .app-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10005; 
+  }
+  .ofertas-container .offers-mini-cart { z-index: 10003; } 
+}
+*/
+
+/* 6) pequeña mejora de accesibilidad: foco y teclado */
+.ofertas-container .offers-mini-cart button:focus {
+  outline: 3px solid rgba(34,139,34,0.18);
+  outline-offset: 2px;
+}

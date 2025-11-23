@@ -36,14 +36,12 @@ const GestionProductos = () => {
   const seleccionarProducto = (producto) => {
     setProductoSeleccionado(producto);
 
-    // esperar a que se renderice EditarProducto
     setTimeout(() => {
       editarRef.current?.scrollIntoView({ behavior: 'smooth' });
       editarNombreRef.current?.focus();
     }, 300);
   };
 
-  // Formatea moneda local (ajustá locale/currency si lo necesitás)
   const formatCurrency = (value) => {
     const num = Number(value);
     if (Number.isNaN(num)) return '-';
@@ -105,11 +103,8 @@ const GestionProductos = () => {
 
   return (
     <div className={styles.wrapper}>
-      {/* Container que centra y da márgenes responsivos */}
       <div className={`container-fluid container-md ${styles.container}`}>
-        {/* Row principal: dos paneles (izq: lista, der: formulario/editor) */}
         <div className="row g-4">
-          {/* Panel izquierdo: Lista de productos (ocupa más espacio en desktop) */}
           <div className="col-12 col-md-8">
             <div className={styles.panel}>
               <div
@@ -132,7 +127,6 @@ const GestionProductos = () => {
                 </div>
               </div>
 
-              {/* Grid responsive de productos: 4/2/1 */}
               <div className="row justify-content-center g-4">
                 {productos.map((producto) => {
                   const nombre =
@@ -160,7 +154,6 @@ const GestionProductos = () => {
                           }}
                         />
 
-                        {/* info: nombre + precio */}
                         <div className={styles.info}>
                           <h3 className={styles.nombre} title={nombre}>
                             {nombre}
@@ -172,7 +165,6 @@ const GestionProductos = () => {
                           </p>
                         </div>
 
-                        {/* Botones */}
                         <div className={styles.controls}>
                           <button
                             className={`btn btn-sm ${styles.btnEliminar}`}
@@ -193,13 +185,12 @@ const GestionProductos = () => {
             </div>
           </div>
 
-          {/* Panel derecho: Formulario + Editor (ocupa menos espacio en desktop) */}
           <div className="col-12 col-md-5 col-lg-4">
             <div className={styles.panel}>
               <div ref={formRef}>
                 <FormProducto
                   onAgregar={agregarProducto}
-                  ref={nombreInputRef} // <-- pasa ref al input nombre
+                  ref={nombreInputRef}
                 />
               </div>
 

@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { useAuthContext } from "../contexts/AuthContext";
-import NavBar from "./NavBar";
-import "./Header.css";
+import { Link } from 'react-router-dom';
+import { useAuthContext } from '../contexts/AuthContext';
+import NavBar from './NavBar';
+import './Header.css';
 
 const Header = () => {
   const { usuario } = useAuthContext();
@@ -10,7 +10,7 @@ const Header = () => {
     <header className="header-wrapper">
       <NavBar />
 
-      {usuario === "admin" && (
+      {usuario === 'admin' && (
         <div className="admin-link-container">
           <Link className="admin-link" to="/admin">
             Admin

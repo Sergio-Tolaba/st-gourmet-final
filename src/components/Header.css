@@ -26,12 +26,10 @@
   font-size: 1rem;
 }
 
-/* Centrado general del menú */
 .site-header .nav-container {
   justify-content: center !important;
 }
 
-/* Versión móvil */
 @media (max-width: 600px) {
   .logout-btn {
     font-size: 0.9rem;

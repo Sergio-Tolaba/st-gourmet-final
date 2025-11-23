@@ -155,25 +155,25 @@ body {
     width: 100%;
   }
   .nav-right {
-    justify-content: flex-start; /* deja el contenido alineado a la izquierda */
-    padding-left: 20px; /* desplazamiento visible */
-    padding-right: 10px; /* un poco de aire del borde derecho */
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 10px;
     gap: 10px;
     width: 100%;
   }
   @media (max-width: 720px) {
     .nav-container {
-      padding: 0.5rem 1rem; /* agrega margenes internos a izquierda/derecha */
-      box-sizing: border-box; /* evita recortes */
+      padding: 0.5rem 1rem;
+      box-sizing: border-box;
       width: 100%;
       max-width: 100%;
-      justify-content: center; /* centra todo horizontalmente */
+      justify-content: center;
     }
 
     .nav-center {
-      width: calc(100% - 2rem); /* reduce ancho y añade márgenes laterales */
-      margin: 0 auto; /* centra el menú */
-      border-radius: 8px; /* opcional pero hace que luzca más limpio */
+      width: calc(100% - 2rem);
+      margin: 0 auto;
+      border-radius: 8px;
     }
 
     .nav-link {
@@ -182,11 +182,11 @@ body {
     }
 
     .nav-right {
-      justify-content: flex-start; /* deja el contenido alineado a la izquierda */
-      padding-left: 1xp; /* desplazamiento visible */
-      padding-right: 25px; /* un poco de aire del borde derecho */
+      justify-content: flex-start;
+      padding-left: 1xp;
+      padding-right: 25px;
       gap: 3px;
-      width: 100%; /* evita que se pegue al borde */
+      width: 100%;
     }
   }
 }

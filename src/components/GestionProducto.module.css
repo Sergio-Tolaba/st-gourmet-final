@@ -1,6 +1,3 @@
-/* ============================
-   Variables
-============================ */
 :root {
   --bg: #f5f7fb;
   --panel-bg: #fff;
@@ -11,9 +8,6 @@
   --radius: 10px;
 }
 
-/* ============================
-   Layout general
-============================ */
 .wrapper {
   padding: 20px;
   background: var(--bg);
@@ -30,7 +24,6 @@
   padding: 8px;
 }
 
-/* Paneles */
 .panel {
   flex: 1 1 0;
   background: var(--panel-bg);
@@ -39,9 +32,6 @@
   box-shadow: var(--card-shadow);
 }
 
-/* ============================
-   Botón agregar producto
-============================ */
 .botonAgregarProducto {
   display: flex;
   justify-content: flex-end;
@@ -69,9 +59,6 @@
   margin-top: 40px;
 }
 
-/* ============================
-   Tarjetas de producto
-============================ */
 .productoItem {
   padding: 1rem;
   border-radius: 10px;
@@ -119,9 +106,6 @@
   color: var(--accent);
 }
 
-/* ============================
-   Botones dentro de la tarjeta
-============================ */
 .controls {
   display: flex;
   justify-content: flex-end;
@@ -138,9 +122,6 @@
   cursor: pointer;
 }
 
-/* ============================
-   FORMULARIO
-============================ */
 .formContainer {
   display: flex;
   flex-direction: column;
@@ -148,11 +129,6 @@
   margin-top: 40px;
 }
 
-/* ============================
-   RESPONSIVE
-============================ */
-
-/* ==== Móviles ==== */
 @media (max-width: 575.98px) {
   .container {
     flex-direction: column;
@@ -179,7 +155,6 @@
   }
 }
 
-/* ==== Tablets ==== */
 @media (min-width: 576px) and (max-width: 991.98px) {
   .imagen {
     height: 160px;
@@ -194,7 +169,6 @@
   }
 }
 
-/* ==== Desktop ==== */
 @media (min-width: 992px) {
   .imagen {
     height: 200px;
@@ -208,19 +182,17 @@
     font-size: 1.05rem;
   }
 }
-/* ============================================
-   CENTRAR TODA LA SPA
-============================================ */
+
 .wrapper {
   display: flex;
   justify-content: center;
 }
 
 .container {
-  margin: 0 auto; /* centra todo */
-  max-width: 1200px; /* ancho ideal web */
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .panel {
-  margin: 0 auto; /* centra cada panel dentro de su columna */
+  margin: 0 auto;
 }

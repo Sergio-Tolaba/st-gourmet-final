@@ -17,7 +17,6 @@ export function CarritoProvider({ children }) {
       );
     }
 
-    // 🔥 Si el producto NO tiene id, generar uno único
     const id = producto.id ?? crypto.randomUUID();
 
     return [...prev, { ...producto, id, cantidad: 1 }];

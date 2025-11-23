@@ -16,7 +16,7 @@ const FormProducto = forwardRef(({ onAgregar }, ref) => {
 
   const submit = (e) => {
     e.preventDefault();
-    // validación simple
+
     if (!nombre.trim()) return alert('Completá el nombre del producto');
     const producto = {
       nombre: nombre.trim(),

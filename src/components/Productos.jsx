@@ -23,7 +23,7 @@ const Productos = () => {
       .then((datos) => setProductos(datos))
       .catch(() => setError('Error al cargar productos'))
       .finally(() => setCargando(false));
-  }, []); // 👈 se ejecuta una sola vez al montar
+  }, []);
 
   if (cargando) return <div>Cargando productos...</div>;
   if (error)
@@ -34,29 +34,30 @@ const Productos = () => {
       </div>
     );
 
-  
   return (
     <div className="productos-container">
       <div className="row">
-  {productos.map((producto) => (
-    <div key={producto.id} className="col-lg-3 col-md-6 col-12 mb-4">
-      <div className="producto-card">
-        <img src={producto.imagen} height={80} width={80} />
-        <h3 className="nombre">{producto.nombre}</h3>
-        <p className="precio">${producto.precio}</p>
-        <div className="botones">
-          <Link to={`/productos/${producto.id}`}>
-            <button className="btn-detalle">Ver detalle</button>
-          </Link>
-          <button className="btn-agregar" onClick={() => agregarProducto(producto)}>
-            🛒Agregar
-          </button>
-        </div>
+        {productos.map((producto) => (
+          <div key={producto.id} className="col-lg-3 col-md-6 col-12 mb-4">
+            <div className="producto-card">
+              <img src={producto.imagen} height={80} width={80} />
+              <h3 className="nombre">{producto.nombre}</h3>
+              <p className="precio">${producto.precio}</p>
+              <div className="botones">
+                <Link to={`/productos/${producto.id}`}>
+                  <button className="btn-detalle">Ver detalle</button>
+                </Link>
+                <button
+                  className="btn-agregar"
+                  onClick={() => agregarProducto(producto)}
+                >
+                  🛒Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
-
     </div>
   );
 };
