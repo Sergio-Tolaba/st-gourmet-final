@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useAuthContext } from '../contexts/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
   const { login } = useAuthContext();
@@ -26,35 +27,34 @@ const Login = () => {
   };
 
   return (
-    <div style={{ maxWidth: 420, margin: '2rem auto', padding: '1rem' }}>
-      <h2>Iniciar sesión</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Usuario</label>
+    <div className="login-container">
+      <h2 className="login-title">Iniciar sesión</h2>
+
+      <form className="login-form" onSubmit={handleSubmit}>
+        <label className="login-label">Usuario</label>
         <input
           autoFocus
+          className="login-input"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          style={{ width: '100%', marginBottom: 12, padding: 8 }}
         />
 
-        <label>Contraseña</label>
+        <label className="login-label">Contraseña</label>
         <input
           type="password"
+          className="login-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          style={{ width: '100%', marginBottom: 12, padding: 8 }}
         />
 
-        {error && (
-          <div style={{ color: 'crimson', marginBottom: 8 }}>{error}</div>
-        )}
+        {error && <div className="login-error">{error}</div>}
 
-        <button type="submit" style={{ padding: '8px 12px' }}>
+        <button type="submit" className="login-button">
           Entrar
         </button>
       </form>
 
-      <div style={{ marginTop: 12, fontSize: 13, color: '#555' }}>
+      <div className="login-help">
         <div>Credenciales de prueba:</div>
         <div>admin / password123 (admin)</div>
         <div>usuario / usuario123 (usuario sin acceso a Gestión)</div>
