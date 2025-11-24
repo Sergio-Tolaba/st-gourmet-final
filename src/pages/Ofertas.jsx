@@ -306,7 +306,7 @@ const Ofertas = () => {
               <div className="pay-gourmet">
                 <h3>¡Gracias por elegir calidad Gourmet!</h3>
                 <p>
-                  Después del pago simulado verás una confirmación y tu carrito
+                  Después de confirmar su pago; el carrito
                   se vaciará.
                 </p>
               </div>
