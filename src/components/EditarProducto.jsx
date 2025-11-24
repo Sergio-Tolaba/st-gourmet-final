@@ -30,13 +30,26 @@ const EditarProducto = forwardRef(
 
     const manejarSubmit = async (evento) => {
       evento.preventDefault();
+      const precioNum = Number(producto.precio);
+      if (Number.isNaN(precioNum)) {
+        alert('El precio debe ser un número válido.');
+        return;
+      }
+      if (precioNum < 0) {
+        alert('El precio no puede ser negativo.');
+        return;
+      }
+      // normalizar el campo precio antes de enviar
+      const payload = { ...producto, precio: precioNum };
+      // <<< fin validación >>>
+
       try {
         const respuesta = await fetch(`${API}/${producto.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(producto),
+          body: JSON.stringify(payload),
         });
 
         if (!respuesta.ok) throw new Error('Error al actualizar el producto');

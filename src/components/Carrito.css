@@ -1,7 +1,7 @@
 .carrito-container,
 .carrito-container * {
   box-sizing: border-box;
-  color: #111 !important; /* fuerza color legible (corrección) */
+  color: #111 !important; 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial;
   -webkit-font-smoothing: antialiased;
@@ -253,10 +253,7 @@
     padding: 8px 10px;
   }
 }
-/* ======= Restauración móvil específica para Carrito =======
-   Pegar este bloque completo en Carrito.css (al final).
-   Usa alta especificidad y algunos !important para recuperar el look.
-   ========================================================== */
+
 
 .carrito-container {
   box-sizing: border-box;
@@ -268,7 +265,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* Items del carrito: columnas verticales en móvil */
+
 .carrito-container .cart-list,
 .carrito-container .carrito-list,
 .carrito-container ul.cart-items {
@@ -280,7 +277,6 @@
   list-style: none !important;
 }
 
-/* Cada item: imagen a la izquierda, contenido flexible a la derecha -- pero en móvil stacked */
 .carrito-container .cart-item,
 .carrito-container .car-item,
 .carrito-container .cart-row {
@@ -292,7 +288,7 @@
   background: transparent !important;
 }
 
-/* En pantallas pequeñas apilamos verticalmente (imagen arriba, texto abajo) */
+
 @media (max-width: 640px) {
   .carrito-container .cart-item,
   .carrito-container .car-item,
@@ -311,7 +307,7 @@
   }
 }
 
-/* Texto y titulos */
+
 .carrito-container .product-name,
 .carrito-container .cart-title,
 .carrito-container .item-name {
@@ -321,7 +317,6 @@
   margin: 0 0 6px 0 !important;
 }
 
-/* Precio y subtotal */
 .carrito-container .price,
 .carrito-container .item-price,
 .carrito-container .subtotal {
@@ -330,7 +325,7 @@
   font-size: 1rem !important;
 }
 
-/* Botones: ocupar ancho completo en móvil y espaciado correcto */
+
 .carrito-container .cart-actions,
 .carrito-container .cart-buttons,
 .carrito-container .actions {
@@ -351,13 +346,13 @@
   box-sizing: border-box !important;
 }
 
-/* Botón secundario */
+
 .carrito-container .btn-secondary,
 .carrito-container .cancel-btn {
   width: 48% !important;
 }
 
-/* Total final fijo al fondo (si preferís que sea fijo en móvil) */
+
 .carrito-container .cart-footer,
 .carrito-container .cart-summary {
   position: fixed !important;
@@ -371,16 +366,16 @@
   justify-content: space-between !important;
   gap: 12px !important;
   align-items: center !important;
-  z-index: 10002 !important; /* por encima de mini carts */
+  z-index: 10002 !important; 
 }
 
-/* Evitar que fixed elements de otras pantallas tapen el carrito */
+
 .carrito-container,
 .carrito-container * {
   z-index: auto !important;
 }
 
-/* Si había toasts o notificaciones de ofertas que aparezcan sobre el carrito, los bajamos */
+
 .ofertas-container .toast,
 .ofertas-container .offers-mini-cart,
 .toast {
@@ -404,10 +399,9 @@
   padding: 0 !important;
   border-radius: 6px !important;
 }
-/* ====== Fix: volver a mostrar botones en desktop ====== */
-/* Aplicar sólo en pantallas de escritorio/tabla hacia arriba */
+
 @media (min-width: 721px) {
-  /* Aseguramos que los botones en el header no ocupen 100% */
+
   .carrito-container .carrito-header .acciones .btn,
   .carrito-container .carrito-header .acciones button,
   .carrito-container .carrito-header .acciones .btn-vaciar,
@@ -420,7 +414,7 @@
     box-sizing: border-box !important;
   }
 
-  /* Aseguramos que el contenedor de acciones esté visible y alineado a la derecha */
+ 
   .carrito-container .carrito-header .acciones {
     display: flex !important;
     justify-content: flex-end !important;
@@ -430,30 +424,30 @@
     opacity: 1 !important;
   }
 
-  /* Evitar que el footer fijo o mini-carts lo tapen */
+ 
   .carrito-container .carrito-header {
     z-index: 1010 !important;
   }
 }
 
-/* Si algún ancestro tiene overflow:hidden que esté recortando, permitimos show */
+
 .carrito-container .carrito-header,
 .carrito-container .carrito-header * {
   overflow: visible !important;
 }
 
-/* Extra: si por algún motivo los botones quedaron con opacity:0 */
+
 .carrito-container .carrito-header .acciones .btn,
 .carrito-container .carrito-header .acciones button {
   opacity: 1 !important;
   visibility: visible !important;
 }
-/* ==== FIX FUERTE: asegurar botones visibles EN DESKTOP ==== */
+
 @media (min-width: 721px) {
-  /* forzamos el contenedor de acciones en el header */
+
   .carrito-container .carrito-header {
     position: relative !important;
-    z-index: 11005 !important; /* encima de overlays */
+    z-index: 11005 !important; 
     overflow: visible !important;
   }
 
@@ -468,7 +462,7 @@
     transform: none !important;
   }
 
-  /* Forzamos cada botón del header a mostrarse en línea */
+
   .carrito-container .carrito-header .acciones .btn,
   .carrito-container .carrito-header .acciones button,
   .carrito-container .carrito-header .acciones .btn-vaciar,
@@ -487,33 +481,31 @@
     z-index: 11006 !important;
   }
 
-  /* Si algún ancestro tiene transform/translate que recorta el overflow: lo anulamos visualmente */
   .carrito-container,
   .carrito-container * {
     transform: none !important;
   }
 
-  /* Debug visual temporal: añade borde para ubicar los botones (quitar cuando esté ok) */
   .carrito-container .carrito-header .acciones .btn,
   .carrito-container .carrito-header .acciones button {
     box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
     border-radius: 8px !important;
   }
 }
-/* ===== Ajuste: asegurar que el menú principal quede sobre el carrito (desktop) ===== */
+
 @media (min-width: 721px) {
-  /* Si el header de tu SPA está fijo arriba, le damos espacio al carrito */
+ 
   .carrito-container {
-    /* Ajustá 72px por la altura real de tu menú si hace falta */
+   
     margin-top: calc(var(--app-header-height, 72px) + 12px) !important;
     position: relative !important;
-    z-index: 1 !important; /* mantener por debajo del menú principal */
+    z-index: 1 !important; 
   }
 
-  /* Los botones del header del carrito deben mostrarse pero por debajo del menu */
+ 
   .carrito-container .carrito-header {
     position: relative !important;
-    z-index: 2 !important; /* suficientemente arriba respecto al contenido, pero debajo del menú si este tiene >2 */
+    z-index: 2 !important; 
   }
 
   .carrito-container .carrito-header .acciones {

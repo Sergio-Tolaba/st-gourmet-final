@@ -1,8 +1,3 @@
-/* ==========================
-   Ofertas.css (NAMESPACED)
-   Reemplazar todo el archivo con este bloque
-   ========================== */
-
 .ofertas-container {
   padding: 1rem;
   max-width: 1100px;
@@ -15,7 +10,6 @@
   position: relative;
 }
 
-/* ===== Header ===== */
 .ofertas-container .ofertas-header {
   display: flex;
   justify-content: space-between;
@@ -34,7 +28,6 @@
   font-size: 0.95rem;
 }
 
-/* ===== Grid & Cards ===== */
 .ofertas-container .ofertas-grid {
   display: grid;
   gap: 1rem;
@@ -50,16 +43,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform .18s ease;
+  transition: transform 0.18s ease;
 }
-.ofertas-container .oferta-card:hover { transform: translateY(-6px); }
+.ofertas-container .oferta-card:hover {
+  transform: translateY(-6px);
+}
 
 .ofertas-container .oferta-img {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
-  background: linear-gradient(180deg,#fff8f3,#f0e6df);
+  background: linear-gradient(180deg, #fff8f3, #f0e6df);
 }
 
 .ofertas-container .oferta-nombre {
@@ -70,7 +65,6 @@
   min-height: 48px;
 }
 
-/* precios */
 .ofertas-container .oferta-precios {
   display: flex;
   justify-content: center;
@@ -81,7 +75,7 @@
 .ofertas-container .precio-original {
   text-decoration: line-through;
   color: #a18474;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 .ofertas-container .precio-oferta {
   font-size: 1.05rem;
@@ -89,7 +83,6 @@
   color: var(--gourmet-primary);
 }
 
-/* acciones */
 .ofertas-container .oferta-acciones {
   display: flex;
   gap: 0.5rem;
@@ -99,14 +92,14 @@
 .ofertas-container .btn-oferta {
   background: var(--gourmet-primary);
   color: white;
-  padding: .5rem .9rem;
+  padding: 0.5rem 0.9rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
 }
 .ofertas-container .btn-detalle {
-  padding: .45rem .8rem;
+  padding: 0.45rem 0.8rem;
   border-radius: 8px;
   background: transparent;
   border: 1px solid #d3b49b;
@@ -115,7 +108,6 @@
   font-weight: 600;
 }
 
-/* ===== Mini cart (fixed) ===== */
 .ofertas-container .offers-mini-cart {
   position: fixed;
   right: 18px;
@@ -124,9 +116,9 @@
   max-height: 76vh;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   overflow: hidden;
-  transform: translateY(40px) scale(.99);
+  transform: translateY(40px) scale(0.99);
   opacity: 0;
   transition: all 240ms ease;
   z-index: 9998;
@@ -138,78 +130,161 @@
   opacity: 1;
 }
 
-/* mini header */
 .ofertas-container .mini-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 12px;
-  border-bottom:1px solid #f0e6df;
-  background:#fff8f3;
+  border-bottom: 1px solid #f0e6df;
+  background: #fff8f3;
 }
-.ofertas-container .mini-header strong{ color:#4d342d; font-size:1rem; }
-.ofertas-container .mini-actions{ display:flex; gap:8px; align-items:center; }
+.ofertas-container .mini-header strong {
+  color: #4d342d;
+  font-size: 1rem;
+}
+.ofertas-container .mini-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
-/* mini body */
-.ofertas-container .mini-body { padding:10px; overflow:auto; }
-.ofertas-container .mini-empty-state { text-align:center; color:#7a604a; padding:18px 8px; }
-.ofertas-container .mini-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
-.ofertas-container .mini-item { display:flex; justify-content:space-between; align-items:center; gap:8px; }
-.ofertas-container .mini-left { display:flex; flex-direction:column; gap:6px; max-width:60%; }
-.ofertas-container .mini-name { font-weight:600; color:#4d342d; font-size:.95rem; }
-.ofertas-container .mini-qty { display:flex; gap:8px; align-items:center; }
-.ofertas-container .mini-qty button { width:28px; height:28px; border-radius:6px; border:1px solid #e7d6c6; background:transparent; cursor:pointer; }
-.ofertas-container .mini-sub { font-weight:700; color:#2d2d2d; }
-.ofertas-container .mini-remove { background:transparent; border:none; color:#b94b22; cursor:pointer; font-size:.85rem; }
+.ofertas-container .mini-body {
+  padding: 10px;
+  overflow: auto;
+}
+.ofertas-container .mini-empty-state {
+  text-align: center;
+  color: #7a604a;
+  padding: 18px 8px;
+}
+.ofertas-container .mini-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ofertas-container .mini-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.ofertas-container .mini-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 60%;
+}
+.ofertas-container .mini-name {
+  font-weight: 600;
+  color: #4d342d;
+  font-size: 0.95rem;
+}
+.ofertas-container .mini-qty {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.ofertas-container .mini-qty button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #e7d6c6;
+  background: transparent;
+  cursor: pointer;
+}
+.ofertas-container .mini-sub {
+  font-weight: 700;
+  color: #2d2d2d;
+}
+.ofertas-container .mini-remove {
+  background: transparent;
+  border: none;
+  color: #b94b22;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
 
-/* summary & ctas */
-.ofertas-container .mini-summary{ display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-top:1px dashed #efe0d3; margin-top:8px; font-weight:700; color:#4d342d; }
-.ofertas-container .mini-cta{ display:flex; gap:8px; justify-content:center; padding-bottom:8px; margin-top:6px; }
-.ofertas-container .btn-pay{ background:#256029; color:white; padding:8px 12px; border-radius:8px; border:none; cursor:pointer; font-weight:700; }
-.ofertas-container .btn-secondary{ background:transparent; border:1px solid #d3b49b; padding:8px 10px; border-radius:8px; cursor:pointer; }
+.ofertas-container .mini-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px dashed #efe0d3;
+  margin-top: 8px;
+  font-weight: 700;
+  color: #4d342d;
+}
+.ofertas-container .mini-cta {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding-bottom: 8px;
+  margin-top: 6px;
+}
+.ofertas-container .btn-pay {
+  background: #256029;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.ofertas-container .btn-secondary {
+  background: transparent;
+  border: 1px solid #d3b49b;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-/* toggle full width */
-.ofertas-container .offers-mini-toggle .mini-toggle-btn { background:transparent; border:1px solid #f0e6df; padding:8px 12px; border-radius:10px; cursor:pointer; }
+.ofertas-container .offers-mini-toggle .mini-toggle-btn {
+  background: transparent;
+  border: 1px solid #f0e6df;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-/* ===== Modal (70% ancho en desktop, scroll interno) ===== */
 .ofertas-container .pay-modal {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   padding: 1rem;
   z-index: 9999;
 }
 
-/* caja del modal */
 .ofertas-container .pay-card {
-  width: 70vw;              /* aprox 70% del viewport */
+  width: 70vw;
   max-width: 920px;
   min-width: 320px;
   max-height: 85vh;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* cabecera, cuerpo, footer */
 .ofertas-container .pay-card-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
   padding: 14px 16px;
-  border-bottom:1px solid #f0e6df;
+  border-bottom: 1px solid #f0e6df;
 }
 .ofertas-container .pay-card-inner {
   padding: 1rem 1.2rem;
   overflow-y: auto;
-  max-height: calc(85vh - 96px); /* reserva para header+footer */
+  max-height: calc(85vh - 96px);
   box-sizing: border-box;
 }
 .ofertas-container .pay-card-body img {
@@ -220,14 +295,13 @@
   border-radius: 8px;
 }
 .ofertas-container .pay-card-footer {
-  display:flex;
-  justify-content:flex-end;
-  gap:10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
   padding: 12px 16px;
-  border-top:1px solid #f3e9e0;
+  border-top: 1px solid #f3e9e0;
 }
 
-/* botones modal */
 .ofertas-container .btn-primary {
   background: #256029;
   color: #fff;
@@ -245,34 +319,47 @@
   cursor: pointer;
 }
 
-/* ===== Toast scopeado ===== */
 .ofertas-container .toast {
   position: fixed;
   right: 16px;
   bottom: 18px;
-  background: linear-gradient(180deg,#ffffff,#fff8f0);
-  border:1px solid var(--gourmet-border);
-  padding:10px 12px;
-  border-radius:10px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.12);
-  opacity:0;
-  transform:translateY(8px);
+  background: linear-gradient(180deg, #ffffff, #fff8f0);
+  border: 1px solid var(--gourmet-border);
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateY(8px);
   transition: all 250ms ease;
-  z-index:10001;
+  z-index: 10001;
 }
-.ofertas-container .toast--visible { opacity:1; transform:translateY(0); }
+.ofertas-container .toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-/* ===== Responsive tweaks ===== */
 @media (max-width: 900px) {
-  .ofertas-container .pay-card { width: 92vw; max-width: 680px; }
-  .ofertas-container .pay-card-inner { max-height: calc(88vh - 88px); }
-  .ofertas-container .oferta-img { height: 130px; }
-  .ofertas-container .ofertas-header { flex-direction: column; align-items: flex-start; }
+  .ofertas-container .pay-card {
+    width: 92vw;
+    max-width: 680px;
+  }
+  .ofertas-container .pay-card-inner {
+    max-height: calc(88vh - 88px);
+  }
+  .ofertas-container .oferta-img {
+    height: 130px;
+  }
+  .ofertas-container .ofertas-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-/* Mobile: mini-cart como sheet y espacio para contenido */
 @media (max-width: 640px) {
-  .ofertas-container .ofertas-grid { gap: 0.9rem; margin-bottom: 14vh; }
+  .ofertas-container .ofertas-grid {
+    gap: 0.9rem;
+    margin-bottom: 14vh;
+  }
 
   .ofertas-container .offers-mini-cart {
     left: 8px;
@@ -286,7 +373,7 @@
     flex-direction: column;
     transform: translateY(0) scale(1) !important;
     opacity: 1 !important;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
     z-index: 10000;
   }
 
@@ -296,62 +383,64 @@
     overflow-y: auto;
   }
 
-  .ofertas-container .offers-mini-toggle { align-self: stretch; width: 100%; }
-  .ofertas-container .offers-mini-toggle .mini-toggle-btn { width: 100%; display:flex; justify-content:center; gap:8px; padding:10px; }
+  .ofertas-container .offers-mini-toggle {
+    align-self: stretch;
+    width: 100%;
+  }
+  .ofertas-container .offers-mini-toggle .mini-toggle-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+  }
 
-  .ofertas-container { padding-bottom: 6.6rem; } /* espacio para sheet */
+  .ofertas-container {
+    padding-bottom: 6.6rem;
+  } /* espacio para sheet */
 }
-/* ============================
-  FIX: mostrar mini-cart en tablet+desktop y evitar que tape el footer
-  Pegar al final de Ofertas.css (reemplaza reglas previas de .offers-mini-cart)
-  ============================ */
 
-/* variable para controlar altura visual aproximada del mini-cart (ajustá si cambias paddings) */
-:root { --offers-mini-height: 56px; }
+:root {
+  --offers-mini-height: 56px;
+}
 
-/* 1) Aseguramos espacio en el contenido para que el footer nunca quede tapado */
 .ofertas-container {
-  /* dejar espacio al final del contenido: altura del mini-cart + margen */
   padding-bottom: calc(var(--offers-mini-height) + 2.4rem);
   box-sizing: border-box;
 }
 
-/* 2) Mini-cart: visible por defecto (mobile -> sheet, tablet/desktop -> floating panel) */
 .ofertas-container .offers-mini-cart {
   position: fixed;
   right: 16px;
   bottom: 12px;
-  width: 340px;                 /* ancho razonable en desktop/tablet */
+  width: 340px;
   max-width: calc(100% - 32px);
   max-height: 60vh;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform .22s ease, opacity .22s ease;
+  transition: transform 0.22s ease, opacity 0.22s ease;
   opacity: 1;
-  z-index: 10002;               /* suficientemente arriba, pero no demasiado */
+  z-index: 10002;
 }
 
-/* mini-cart "oculto" aún responde a open/close si usás clase .open */
 .ofertas-container .offers-mini-cart:not(.open) {
-  transform: translateY(8px) scale(.995);
-  opacity: .98;
+  transform: translateY(8px) scale(0.995);
+  opacity: 0.98;
 }
 
-/* header del mini-cart */
 .ofertas-container .offers-mini-cart .mini-header {
   padding: 10px 12px;
   background: #fff8f3;
   border-bottom: 1px solid #f0e6df;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* cuerpo del mini (scroll interno) */
 .ofertas-container .offers-mini-cart .mini-body {
   padding: 10px;
   overflow-y: auto;
@@ -359,19 +448,19 @@
   box-sizing: border-box;
 }
 
-/* CTA/fila final del mini */
 .ofertas-container .offers-mini-cart .mini-cta {
   padding: 10px;
   border-top: 1px solid #f3e9e0;
-  display:flex;
-  gap:8px;
+  display: flex;
+  gap: 8px;
   justify-content: space-between;
   align-items: center;
 }
 
-/* 3) Comportamiento en móvil: ocupar casi todo el ancho como sheet */
 @media (max-width: 640px) {
-  :root { --offers-mini-height: 64px; } /* más alto en móvil si hay botones grandes */
+  :root {
+    --offers-mini-height: 64px;
+  }
 
   .ofertas-container .offers-mini-cart {
     left: 8px;
@@ -385,14 +474,14 @@
   }
 
   .ofertas-container .ofertas-grid {
-    margin-bottom: calc(var(--offers-mini-height) + 3rem); /* más espacio en móvil */
+    margin-bottom: calc(var(--offers-mini-height) + 3rem);
   }
 
-  .ofertas-container { padding-bottom: calc(var(--offers-mini-height) + 3.2rem); }
+  .ofertas-container {
+    padding-bottom: calc(var(--offers-mini-height) + 3.2rem);
+  }
 }
 
-/* 4) Tablet/Desktop: aseguramos que el mini no tape el footer al hacer scroll */
-/*    - aumentamos max-height y hacemos que esté a la derecha (no en el medio inferior). */
 @media (min-width: 641px) {
   .ofertas-container .offers-mini-cart {
     width: 360px;
@@ -402,29 +491,12 @@
     border-radius: 12px;
   }
 
-  /* darle al contenido principal un margen-bottom menor (ya tenemos padding en .ofertas-container) */
-  .ofertas-container .ofertas-grid { margin-bottom: 1.6rem; }
-}
-
-/* 5) Si el footer está FIXED en tu layout, forzamos el mini-cart a aparecer POR DEBAJO del footer
-   (solo si tu footer tiene clase .app-footer; si no, ajustá el selector).
-   En general no hace falta; lo dejo comentado como opción alternativa:
-*/
-/*
-@media (min-width: 641px) {
-  .app-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10005; 
+  .ofertas-container .ofertas-grid {
+    margin-bottom: 1.6rem;
   }
-  .ofertas-container .offers-mini-cart { z-index: 10003; } 
 }
-*/
 
-/* 6) pequeña mejora de accesibilidad: foco y teclado */
 .ofertas-container .offers-mini-cart button:focus {
-  outline: 3px solid rgba(34,139,34,0.18);
+  outline: 3px solid rgba(34, 139, 34, 0.18);
   outline-offset: 2px;
 }

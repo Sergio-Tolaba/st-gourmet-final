@@ -165,7 +165,11 @@ const Ofertas = () => {
 
       <section className="ofertas-grid">
         {ofertasData.map((item) => (
-          <article key={item.id} className="oferta-card" aria-label={item.nombre}>
+          <article
+            key={item.id}
+            className="oferta-card"
+            aria-label={item.nombre}
+          >
             <img
               src={item.imagen}
               alt={item.nombre}
@@ -195,7 +199,9 @@ const Ofertas = () => {
               <span className="precio-original">
                 {currency(item.precioOriginal)}
               </span>
-              <span className="precio-oferta">{currency(item.precioOferta)}</span>
+              <span className="precio-oferta">
+                {currency(item.precioOferta)}
+              </span>
             </div>
 
             <div className="oferta-acciones">
@@ -305,10 +311,7 @@ const Ofertas = () => {
 
               <div className="pay-gourmet">
                 <h3>¡Gracias por elegir calidad Gourmet!</h3>
-                <p>
-                  Después de confirmar su pago; el carrito
-                  se vaciará.
-                </p>
+                <p>Después de confirmar su pago; el carrito se vaciará.</p>
               </div>
             </div>
 

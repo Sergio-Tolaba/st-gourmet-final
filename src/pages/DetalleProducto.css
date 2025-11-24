@@ -1,12 +1,3 @@
-/* src/pages/DetalleProducto.css
-   Estilos responsivos para DetalleProducto.jsx
-   - Escritorio / Tablet / Móvil
-   - Imagen contenida, responsive y con max-height
-   - Evita que overlays lo tapen (z-index)
-   - Accesibilidad básica y estados de foco
-*/
-
-/* Variables para fácil personalización */
 :root {
   --max-width: 1100px;
   --gutter: 1rem;
@@ -20,7 +11,7 @@
   --danger: #ef4444;
 }
 
-/* Contenedor principal */
+
 .detalle-container {
   max-width: var(--max-width);
   margin: 1.2rem auto;
@@ -31,11 +22,11 @@
   border-radius: var(--card-radius);
   box-shadow: var(--shadow);
   position: relative;
-  z-index: 50; /* suficiente para estar por encima de overlays cerrados */
+  z-index: 50; 
   overflow: visible;
 }
 
-/* Estado de carga y errores */
+
 .detalle-container p {
   margin: 0.4rem 0;
   color: var(--muted);
@@ -50,7 +41,7 @@
   border: 1px solid rgba(239, 68, 68, 0.08);
 }
 
-/* Top: imagen + meta */
+
 .detalle-top {
   display: flex;
   gap: 1.2rem;
@@ -59,9 +50,9 @@
   flex-wrap: wrap;
 }
 
-/* Contenedor de imagen para controlar recorte y tamaño */
+
 .detalle-img {
-  flex: 0 0 420px;      /* ancho base en escritorio */
+  flex: 0 0 420px;     
   max-width: 100%;
   border-radius: 8px;
   overflow: hidden;
@@ -70,18 +61,18 @@
   display: block;
 }
 
-/* La imagen en sí */
+
 .detalle-img img,
 .detalle-img > img {
   display: block;
   width: 100%;
   height: 100%;
-  max-height: 480px;    /* evita imágenes gigantes en vertical */
-  object-fit: cover;    /* cubre el área sin deformar */
+  max-height: 480px;    
+  object-fit: cover;    
   object-position: center;
 }
 
-/* Meta info (derecha) */
+
 .detalle-meta {
   flex: 1 1 340px;
   min-width: 260px;
@@ -91,7 +82,7 @@
   align-items: flex-start;
 }
 
-/* Título y precio */
+
 .detalle-container h2 {
   margin: 0 0 0.6rem 0;
   font-size: 1.5rem;
@@ -105,7 +96,6 @@
   margin: 0.25rem 0 0.5rem 0;
 }
 
-/* Descripción */
 .detalle-meta p {
   margin: 0;
   color: var(--muted);
@@ -117,7 +107,7 @@
   line-height: 1.5;
 }
 
-/* Boton volver y acciones */
+
 .volver {
   margin-top: 1rem;
   display: flex;
@@ -153,7 +143,7 @@
   outline-offset: 3px;
 }
 
-/* Botón secundario (volver) */
+
 .volver a button {
   background: transparent;
   color: var(--text);
@@ -161,7 +151,7 @@
   box-shadow: none;
 }
 
-/* Acciones adicionales (si querés agregar comprar/agregar al carrito) */
+
 .detalle-actions {
   margin-top: 0.6rem;
   display: flex;
@@ -169,14 +159,12 @@
   flex-wrap: wrap;
 }
 
-/* Ajustes para evitar que elementos fijos intercepten clicks
-   (esto es un parche temporal; si un overlay está abierto, debe tener display:none)
-*/
+
 .detalle-container * {
   pointer-events: auto;
 }
 
-/* === Responsive: Tablet === */
+
 @media (max-width: 1024px) {
   .detalle-img {
     flex: 0 0 380px;
@@ -236,7 +224,6 @@
   }
 }
 
-/* Pequeñas utilidades */
 .text-muted { color: var(--muted); }
 .visually-hidden {
   position: absolute !important;
@@ -245,8 +232,3 @@
   white-space: nowrap; border: 0; padding: 0; margin: -1px;
 }
 
-/* Debugging helper (temporal): descomentar para ver bounding boxes
-.detalle-top, .detalle-img, .detalle-meta { outline: 1px dashed rgba(0,0,0,0.06); }
-*/
-
-/* Fin de archivo */

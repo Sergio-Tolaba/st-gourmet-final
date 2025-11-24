@@ -59,7 +59,9 @@ const DetalleProducto = () => {
           <p>
             <strong>Precio:</strong> {producto.precio || '—'}
           </p>
-          <p><strong>Descripción:</strong> {producto.descripcion}</p>
+          <p>
+            <strong>Descripción:</strong> {producto.descripcion}
+          </p>
         </div>
       </div>
 

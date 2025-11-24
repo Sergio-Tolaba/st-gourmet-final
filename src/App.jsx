@@ -19,17 +19,12 @@ function App() {
 
       <main className="container">
         <Routes>
-          {/* Página de inicio */}
           <Route path="/" element={<Inicio />} />
 
-          {/* Ofertas */}
           <Route path="/ofertas" element={<Ofertas />} />
 
-          {/* Detalle de producto */}
-          
           <Route path="/productos/:id" element={<DetalleProducto />} />
 
-          {/* Carrito protegido */}
           <Route
             path="/carrito"
             element={
@@ -39,14 +34,12 @@ function App() {
             }
           />
 
-          {/* Login */}
           <Route path="/login" element={<Login />} />
 
-          {/* Admin protegido */}
           <Route
             path="/admin"
             element={
-               <RutaProtegida onlyAdmin={true}>
+              <RutaProtegida onlyAdmin={true}>
                 <Admin />
               </RutaProtegida>
             }

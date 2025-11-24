@@ -65,133 +65,126 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-  /* ---------- Reset útil para móviles y evitar overflow lateral ---------- */
-html, body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-/* Heredar box-sizing */
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-/* Evita scroll horizontal causado por un elemento que sobresale.
-   Úsalo como "último recurso" si no logras identificar el elemento concreto. */
-body {
-  overflow-x: hidden;
-}
-
-/* ---------- Contenedores: usa max-width + padding para no pegar contenido al borde ---------- */
-.container,
-.nav-container,
-.detalle-container,
-.main-container,
-.carrito-container {
-  max-width: 1100px;    /* o el valor que uses en desktop */
-  margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Para cualquier flex-item que contenga texto largo: permitir encogimiento */
-* { min-width: 0; } /* mejora compatibilidad con flex layouts (evita que hijos forcen overflow) */
-
-/* ---------- Imágenes e íconos: nunca exceder ancho de su contenedor ---------- */
-img, svg, .cart-icon {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ---------- Formularios y botones: ocupar ancho disponible en móvil ---------- */
-form,
-.formulario,
-.form-row {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="email"],
-textarea,
-select,
-button {
-  max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  display: block;
-}
-
-/* Si tienes filas de formulario con display:flex, en móvil las hacemos columna */
-@media (max-width: 720px) {
-  .form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-/* ---------- Regla específica para evitar overflow por elementos posicionados ---------- */
-@media (max-width: 720px) {
-  /* Si usas nav absolute, asegúrate que use left:0; right:0 en vez de width:100% + padding */
-  .nav-center {
-    left: 0;
-    right: 0;
-    width: auto;
+  html,
+  body {
     box-sizing: border-box;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Detalle producto */
-  .detalle-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .detalle-top {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .detalle-meta {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    min-width: 0; /* muy importante para que el texto haga wrap en flex */
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
   }
 
-  /* Carrito - asegurar que las filas no rompán el ancho */
-  .carrito-lista,
-  .carrito-item {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container,
+  .nav-container,
+  .detalle-container,
+  .main-container,
+  .carrito-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
     width: 100%;
     box-sizing: border-box;
-    overflow: visible;
-  }
-  .carrito-item img {
-    max-width: 96px;
-    width: auto;
-    height: auto;
   }
 
-  /* Evita que títulos o botones toquen el borde del viewport */
-  h1, h2, h3, h4, .volver, .btn {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+  * {
+    min-width: 0;
+  }
+
+  img,
+  svg,
+  .cart-icon {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  form,
+  .formulario,
+  .form-row {
+    width: 100%;
     box-sizing: border-box;
   }
-}
 
-/* ---------- Utilidad para detectar el elemento que causa overflow (temporal) ----------
-   Descomenta para depurar: dibuja un borde rojo en todos los elementos y verás cuál sobresale.
-*:not(html):not(body) { outline: 1px solid rgba(255,0,0,0.08); } 
-*/
+  input[type='text'],
+  input[type='number'],
+  input[type='email'],
+  textarea,
+  select,
+  button {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+  }
 
+  @media (max-width: 720px) {
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .nav-center {
+      left: 0;
+      right: 0;
+      width: auto;
+      box-sizing: border-box;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .detalle-container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .detalle-top {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .detalle-meta {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      min-width: 0;
+    }
+
+    .carrito-lista,
+    .carrito-item {
+      width: 100%;
+      box-sizing: border-box;
+      overflow: visible;
+    }
+    .carrito-item img {
+      max-width: 96px;
+      width: auto;
+      height: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .volver,
+    .btn {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      box-sizing: border-box;
+    }
+  }
 }

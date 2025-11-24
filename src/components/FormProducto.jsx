@@ -17,10 +17,22 @@ const FormProducto = forwardRef(({ onAgregar }, ref) => {
   const submit = (e) => {
     e.preventDefault();
 
+    const precioNum = Number(precio);
+
+    if (Number.isNaN(precioNum)) {
+      alert('El precio debe ser un número válido.');
+      return;
+    }
+    if (precioNum < 0) {
+      alert('El precio no puede ser negativo.');
+      return;
+    }
+    // <<< fin validación >>>
+
     if (!nombre.trim()) return alert('Completá el nombre del producto');
     const producto = {
       nombre: nombre.trim(),
-      precio: Number(precio) || 0,
+      precio: precioNum || 0,
       imagen:
         imagen.trim() || 'https://via.placeholder.com/100?text=Sin+imagen',
       descripcion: descripcion.trim(),
@@ -53,6 +65,7 @@ const FormProducto = forwardRef(({ onAgregar }, ref) => {
         <input
           id="precio"
           type="number"
+          min="0"
           value={precio}
           onChange={(e) => setPrecio(e.target.value)}
           placeholder="Ej: 11500 (solo números)"
@@ -82,10 +95,19 @@ const FormProducto = forwardRef(({ onAgregar }, ref) => {
       </div>
 
       <div className={styles.formActions}>
-        <button type="button" className={styles.btnSecondary} onClick={limpiar}>
+        <button
+          type="button"
+          className={styles.btnSecondary}
+          onClick={limpiar}
+          style={{ marginBottom: '10px' }}
+        >
           Limpiar
         </button>
-        <button type="submit" className={styles.btnPrimary}>
+        <button
+          type="submit"
+          className={styles.btnPrimary}
+          style={{ marginBottom: '60px' }}
+        >
           Agregar producto
         </button>
       </div>
