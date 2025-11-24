@@ -280,7 +280,7 @@ const Ofertas = () => {
         <div className="pay-modal" role="dialog" aria-modal="true">
           <div className="pay-card">
             <header className="pay-card-header">
-              <h2>Confirmar pago</h2>
+              <h2>Su pago</h2>
               <button
                 className="pay-close"
                 onClick={() => setPayModalOpen(false)}
