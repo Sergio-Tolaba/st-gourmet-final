@@ -26,7 +26,8 @@ function App() {
           <Route path="/ofertas" element={<Ofertas />} />
 
           {/* Detalle de producto */}
-          <Route path="/producto/:id" element={<DetalleProducto />} />
+          
+          <Route path="/productos/:id" element={<DetalleProducto />} />
 
           {/* Carrito protegido */}
           <Route
